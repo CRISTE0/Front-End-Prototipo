@@ -94,11 +94,16 @@
                 <div class="navbar align-self-center d-flex">
                     <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
                     </div>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <!-- modal carrito -->
+                    <a class="nav-icon position-relative text-decoration-none" href="#" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">1
+                        </span>
                     </a>
+                    <!-- modal carrito -->
+                    
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
@@ -349,9 +354,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- fin FAQs -->
 
 
@@ -455,17 +457,6 @@
     </footer>
     <!-- fin Footer -->
 
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-    </div>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -474,18 +465,28 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog p-5 ">
+            <div class="modal-content d-flex">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Contenido del Carrito</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    ...
+
+                <div class="modal-body ">
+                    <div class="d-flex align-items-center">
+                        <img src="../vista/assets/img/camisetas/camisa5.jpg" alt="" height="250">
+                        <div class="margin-left-20 p-3">
+                            <p><b>Camiseta Chapo</b> </p>
+                            <br>
+                            <p><strong>precio:</strong>35.000</p>
+                        </div>
+
+                    </div>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" class="btn btn-primary">Finalizar Compra</button>
                 </div>
             </div>
         </div>

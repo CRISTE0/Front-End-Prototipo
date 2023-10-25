@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>Admin SoftShirt - Productos</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icono.png">
+
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -177,29 +180,6 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -268,8 +248,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -280,8 +259,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -292,8 +270,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -325,8 +302,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -356,13 +332,389 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
+                <!-- inicio modales CRUD -->
+
+                <!-- Button trigger añadir camiseta-->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+                    Launch demo modal
+                </button>
+                <!-- Button trigger añadir camiseta -->
+
+
+                <!-- Button trigger modal  -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+                    Launch demo modal
+                </button>
+                <!-- Button trigger modal  -->
+
+
+
+                <!--Inicio modal crear camiseta -->
+                <div class="modal fade" id="ModalAñadirCamiseta" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 class="modal-title " id="exampleModalLabel">Añadir Camiseta</h5>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-center">
+                                    <img src="../assets/img/camisetas/camisa5.jpg" alt=""  height="250">
+                                </div>
+                                <div>
+                                    <form action="" class="d-flex align-items-center">
+                                        <input type="file" class="btn">
+                                        <input type="text" placeholder="Nombre Camiseta">
+                                        <input type="number" placeholder="Precio">
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin modal crear camiseta -->
+
+                <!-- fin modales CRUD -->
+
+                <!-- inicio contenido pagina -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h1 class="h3 mb-4 text-center text-dark">Productos</h1>
+
+                        <div class="text-center p-3">
+                            <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#ModalAñadirCamiseta">Añadir Camiseta</button>
+                        </div>
+                    </div>
+
+
+                    <div class="container py-5">
+                        <div class="row">
+                            <div class="col-lg-15">
+                                <div class="row">
+                                    <!-- producto unico -->
+                                    <div class="col">
+                                        <div class="card mb-4 product-wap rounded-0 d-flex">
+                                            <div class="card rounded-0">
+                                                <img class="card-img img-fluid custom-image"
+                                                    src="../assets/img/camisetas/camisa1.jfif">
+                                            </div>
+                                            <div class="card-body d-flex flex-column justify-content-between">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Espacio</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa2.png">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Espacio v2</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa3.jfif">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Among Us</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa4.jfif">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta El
+                                                    Patron</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa5.jpg">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Chapo</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa6.png">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Espacio v3</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa7.png" he>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Espacio v4</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa8.jpg">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    Marvel</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- producto unico -->
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 product-wap rounded-0">
+                                            <div class="card rounded-0">
+                                                <img class="card-img rounded-0 img-fluid"
+                                                    src="../assets/img/camisetas/camisa9.jfif">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <p href="shop-single.html" class="h3 text-decoration-none">Camiseta
+                                                    DeadPool</p>
+                                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+
+                                                    <li class="pt-2">
+                                                        <span
+                                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                        <span
+                                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <p class="text-center mb-0">35.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                 
+                                <div div="row">
+                                    <ul class="pagination pagination-lg justify-content-end">
+                                        <li class="page-item disabled">
+                                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#"
+                                                tabindex="-1">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
+                                                href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </div>
+
+                        </div>
+                    </div>
+
 
                 </div>
+
+                <!-- inicio cintenido pagina -->
+
                 <!-- /.container-fluid -->
 
             </div>
@@ -410,14 +762,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../assets/js/sb-admin-2.min.js"></script>
 
 </body>
 
