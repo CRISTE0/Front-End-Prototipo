@@ -11,10 +11,11 @@
 
     <title>Admin SoftShirt - Productos</title>
 
+    <!-- icono -->
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icono.png">
 
 
-    <!-- Custom fonts for this template-->
+<!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -22,6 +23,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
@@ -164,18 +167,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                   
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -332,23 +324,6 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- inicio modales CRUD -->
-
-                <!-- Button trigger añadir camiseta-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
-                    Launch demo modal
-                </button>
-                <!-- Button trigger añadir camiseta -->
-
-
-                <!-- Button trigger modal  -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
-                    Launch demo modal
-                </button>
-                <!-- Button trigger modal  -->
-
-
-
                 <!--Inicio modal crear camiseta -->
                 <div class="modal fade" id="ModalAñadirCamiseta" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -363,15 +338,23 @@
                                 
                             </div>
                             <div class="modal-body">
-                                <div class="d-flex justify-content-center">
-                                    <img src="../assets/img/camisetas/camisa5.jpg" alt=""  height="250">
-                                </div>
-                                <div>
-                                    <form action="" class="d-flex align-items-center">
-                                        <input type="file" class="btn">
-                                        <input type="text" placeholder="Nombre Camiseta">
-                                        <input type="number" placeholder="Precio">
+                                <form action="" class="">
 
+                                <div class="d-flex justify-content-center container-input">
+
+                                    <input type="file" name="file-5" id="file-5" class="inputfile inputfile-5" data-multiple-caption="{count} archivos seleccionados" multiple />
+                                    <label for="file-5">
+                                    <figure>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    </figure>
+                                    <span class="iborrainputfile">Subir Imágen</span>
+                                    </label>
+                                    
+                                    
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <input type="text" placeholder="Nombre Camiseta">
+                                    <input type="number" placeholder="Precio">
                                     </form>
 
                                 </div>
@@ -386,7 +369,52 @@
                 </div>
                 <!--Fin modal crear camiseta -->
 
-                <!-- fin modales CRUD -->
+                <!--Inicio modal acciones camiseta -->
+                <div class="modal fade" id="ModalAccionesCamiseta" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 class="modal-title " id="exampleModalLabel">Acciones Camiseta</h5>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                
+                            </div>
+                            <div class="modal-body">
+                                <form action="" class="">
+
+                                <div class="d-flex justify-content-center">
+
+                                    <img src="../assets/img/camisetas/camisa1.jfif" alt=""  height="220" class="p-3">
+                                </div>
+
+                                <div class="d-flex justify-content-center mb-2">
+                                    <input type="text" value="Camiseta Espacio">
+                                </div>
+
+                                <div class=" d-flex justify-content-between checkbox">
+                                    <input type="number" placeholder="35.000">
+                                    </form>
+                                    <label class="mycheckbox p-0">
+                                        <input type="checkbox" name="">
+                                        <span>
+                                          <i class="fas fa-check on"></i>
+                                          <i class="fas fa-times off"></i>
+                                        </span>
+                                      </label>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Gurdar Cambios</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin modal acciones camiseta -->
 
                 <!-- inicio contenido pagina -->
                 <div class="container-fluid">
@@ -432,7 +460,9 @@
                                                     </li>
                                                 </ul>
 
-                                                <p class="text-center mb-0">35.000</p>
+                                                <p class="text-center ">35.000</p>
+
+                                                <button type="button" class="btn btn-warning m-1" data-toggle="modal" data-target="#ModalAccionesCamiseta">Acciones</button>
                                             </div>
                                         </div>
                                     </div>
@@ -713,7 +743,7 @@
 
                 </div>
 
-                <!-- inicio cintenido pagina -->
+                <!-- fin contenido pagina -->
 
                 <!-- /.container-fluid -->
 
@@ -770,6 +800,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
+    <script src="../assets/js/app.js"></script>
 
 </body>
 
