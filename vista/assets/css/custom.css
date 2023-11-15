@@ -55,3 +55,7 @@ button {
   box-shadow: none;
   color: inherit;
 }
+
+#btn-plus ,#btn-minus{
+  height: 35px;
+}
