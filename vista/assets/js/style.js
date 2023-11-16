@@ -1,7 +1,4 @@
 // Función para abrir el modal de visualización
-function abrirModalVisualizar() {
-  $("#visualizarModal").modal("show");
-}
 
 // Función para cambiar el estado del botón
 function cambiarEstado(estado) {
@@ -10,25 +7,6 @@ function cambiarEstado(estado) {
   toggleButton.classList.remove("btn-success", "btn-warning", "btn-danger");
   toggleButton.classList.add(getColorClass(estado));
   toggleButton.innerText = estado;
-}
-
-// Función para alternar entre los estados (Activo, Pendiente, Inhabilitado)
-function toggleEstado() {
-  var currentState = document.getElementById("toggleButton").innerText;
-
-  switch (currentState) {
-    case "Activo":
-      cambiarEstado("Pendiente");
-      break;
-    case "Pendiente":
-      cambiarEstado("Inhabilitado");
-      break;
-    case "Inhabilitado":
-      cambiarEstado("Activo");
-      break;
-    default:
-      break;
-  }
 }
 
 // Función para obtener la clase de color correspondiente al estado

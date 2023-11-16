@@ -31,6 +31,8 @@
       href="../assets/vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
   <body id="page-top">
@@ -500,10 +502,98 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Begin Page Content -->
+          <!-- Inicio de Ventas -->
           <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Ventas</h1>
+            <div class="d-flex align-items-center justify-content-between">
+              <h1 class="h3 mb-4 text-center text-dark">Ventas</h1>
+
+              <div class="text-center p-3">
+                <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#ModalAñadirCamiseta"
+                >
+                  <i class="fas fa-pencil-alt"></i> Crear Venta
+                </button>
+
+                <!-- Modal para crear una venta -->
+                <div
+                  class="modal fade"
+                  id="ModalAñadirCamiseta"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="ModalAñadirCamisetaLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="ModalAñadirCamisetaLabel">
+                          Crear Venta
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Contenido del formulario para crear venta -->
+                        <form>
+                          <div class="form-group">
+                            <label for="nombreCliente"
+                              >Nombre del Cliente:</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="nombreCliente"
+                              placeholder="Ingrese el nombre del cliente"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="fechaVenta">Fecha de la Venta:</label>
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="fechaVenta"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="montoVenta">Monto de la Venta:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="montoVenta"
+                              placeholder="Ingrese el monto de la venta"
+                            />
+                          </div>
+                          <!-- Agrega más campos según tus necesidades -->
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Cerrar
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Guardar Venta
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
@@ -546,7 +636,8 @@
                           <button
                             type="button"
                             class="btn btn-info"
-                            onclick="abrirModalVisualizar()"
+                            data-toggle="modal"
+                            data-target="#ModalVisualizarVenta"
                           >
                             <i class="fas fa-eye" title="Ver Detalles"></i>
                           </button>
@@ -562,7 +653,7 @@
                           <!-- Modal de visualización -->
                           <div
                             class="modal fade"
-                            id="visualizarModal"
+                            id="ModalVisualizarVenta"
                             tabindex="-1"
                             role="dialog"
                             aria-labelledby="visualizarModalLabel"
