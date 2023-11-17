@@ -502,6 +502,78 @@
           </nav>
           <!-- End of Topbar -->
 
+          <!-- Modal para crear una Venta -->
+          <div
+            class="modal fade"
+            id="ModalCrearVenta"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="ModalAñadirCamisetaLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="ModalAñadirCamisetaLabel">
+                    Crear Venta
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Contenido del formulario para crear venta -->
+                  <form>
+                    <div class="form-group">
+                      <label for="nombreCliente">Nombre del Cliente:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombreCliente"
+                        placeholder="Ingrese el nombre del cliente"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="fechaVenta">Fecha de la Venta:</label>
+                      <input type="date" class="form-control" id="fechaVenta" />
+                    </div>
+                    <div class="form-group">
+                      <label for="montoVenta">Monto de la Venta:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="montoVenta"
+                        placeholder="Ingrese el monto de la venta"
+                        max="50000"
+                      />
+                    </div>
+                    <!-- Agrega más campos según tus necesidades -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="guardarVenta()"
+                  >
+                    Guardar Venta
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Inicio de Ventas -->
           <div class="container-fluid">
             <!-- Page Heading -->
@@ -514,88 +586,110 @@
                   type="button"
                   class="btn btn-primary"
                   data-toggle="modal"
-                  data-target="#ModalAñadirCamiseta"
+                  data-target="#ModalCrearVenta"
                 >
                   <i class="fas fa-pencil-alt"></i> Crear Venta
                 </button>
+              </div>
+            </div>
 
-                <!-- Modal para crear una venta -->
-                <div
-                  class="modal fade"
-                  id="ModalAñadirCamiseta"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="ModalAñadirCamisetaLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="ModalAñadirCamisetaLabel">
-                          Crear Venta
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- Contenido del formulario para crear venta -->
-                        <form>
-                          <div class="form-group">
-                            <label for="nombreCliente"
-                              >Nombre del Cliente:</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="nombreCliente"
-                              placeholder="Ingrese el nombre del cliente"
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="fechaVenta">Fecha de la Venta:</label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="fechaVenta"
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="montoVenta">Monto de la Venta:</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="montoVenta"
-                              placeholder="Ingrese el monto de la venta"
-                            />
-                          </div>
-                          <!-- Agrega más campos según tus necesidades -->
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-dismiss="modal"
-                        >
-                          Cerrar
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Guardar Venta
-                        </button>
-                      </div>
+            <!-- Modal de visualización -->
+            <div
+              class="modal fade"
+              id="ModalVisualizarVenta"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="visualizarModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="visualizarModalLabel">
+                      Detalles de la Venta
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <!-- Campos del modal para Visualizar -->
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="nombreCliente" style="color: black"
+                        >Nombre del Cliente:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombreCliente"
+                        placeholder="Nombre del cliente aquí"
+                      />
                     </div>
+                    <div class="form-group">
+                      <label for="fechaVenta" style="color: black"
+                        >Fecha de la Venta:</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="fechaVenta"
+                        placeholder="Fecha de la venta aquí"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="montoVenta" style="color: black"
+                        >Cantidad de los productos::</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="montoVenta"
+                        placeholder="Monto de la venta aquí"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="montoVenta" style="color: black"
+                        >Monto de la Venta:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="montoVenta"
+                        placeholder="Monto de la venta aquí"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="detallesVenta" style="color: black"
+                        >Detalles de la Venta:</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="detallesVenta"
+                        style="color: black"
+                        placeholder="Ingresa detalles de la venta aquí..."
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- DataTales Example -->
+            <!-- Tabla Ventas -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Ventas</h6>
@@ -649,97 +743,6 @@
                           >
                             <i class="fas fa-print" title="Imprimir"></i>
                           </button>
-
-                          <!-- Modal de visualización -->
-                          <div
-                            class="modal fade"
-                            id="ModalVisualizarVenta"
-                            tabindex="-1"
-                            role="dialog"
-                            aria-labelledby="visualizarModalLabel"
-                            aria-hidden="true"
-                          >
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5
-                                    class="modal-title"
-                                    id="visualizarModalLabel"
-                                  >
-                                    Detalles de la Venta
-                                  </h5>
-                                  <button
-                                    type="button"
-                                    class="close"
-                                    data-dismiss="modal"
-                                    aria-label="Close"
-                                  >
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <!-- Campos del modal para Visualizar -->
-                                  <div class="form-group">
-                                    <label
-                                      for="nombreCliente"
-                                      style="color: black"
-                                      >Nombre del Cliente:</label
-                                    >
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="nombreCliente"
-                                      placeholder="Nombre del cliente aquí"
-                                    />
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="fechaVenta" style="color: black"
-                                      >Fecha de la Venta:</label
-                                    >
-                                    <input
-                                      type="date"
-                                      class="form-control"
-                                      id="fechaVenta"
-                                      placeholder="Fecha de la venta aquí"
-                                    />
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="montoVenta" style="color: black"
-                                      >Monto de la Venta:</label
-                                    >
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="montoVenta"
-                                      placeholder="Monto de la venta aquí"
-                                    />
-                                  </div>
-                                  <div class="form-group">
-                                    <label
-                                      for="detallesVenta"
-                                      style="color: black"
-                                      >Detalles de la Venta:</label
-                                    >
-                                    <textarea
-                                      class="form-control"
-                                      id="detallesVenta"
-                                      style="color: black"
-                                      placeholder="Ingresa detalles de la venta aquí..."
-                                    ></textarea>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button
-                                    type="button"
-                                    class="btn btn-secondary"
-                                    data-dismiss="modal"
-                                  >
-                                    Cerrar
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </td>
                         <td>
                           <div

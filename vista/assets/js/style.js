@@ -1,5 +1,3 @@
-// Función para abrir el modal de visualización
-
 // Función para cambiar el estado del botón
 function cambiarEstado(estado) {
   // Cambiar la clase y el texto del botón principal
