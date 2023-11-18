@@ -20,3 +20,23 @@ function getColorClass(estado) {
       return "btn-secondary"; // Puedes establecer un color predeterminado si es necesario
   }
 }
+
+// Función para cambiar el estado del cliente
+function cambiarEstadoCliente(estado) {
+  // Cambiar la clase y el texto del botón de cliente
+  var toggleClienteButton = document.getElementById("toggleClienteButton");
+  toggleClienteButton.classList.remove("btn-success", "btn-danger");
+  toggleClienteButton.classList.add(getColorClassCliente(estado));
+  toggleClienteButton.innerText = estado;
+}
+
+function getColorClassCliente(estado) {
+  switch (estado) {
+    case "Activo":
+      return "btn-success";
+    case "Inactivo":
+      return "btn-danger";
+    default:
+      return "btn-secondary"; // Puedes establecer un color predeterminado si es necesario
+  }
+}

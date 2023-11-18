@@ -168,3 +168,18 @@
   border: 2px solid;
   /* Color del borde (verde en este ejemplo) */
 }
+
+#estadoClienteDropdown {
+  border: 2px solid;
+}
+
+.black-icon {
+  color: black;
+  transition: color 0.3s ease;
+  /* Agrega una transición para suavizar el cambio de color */
+}
+
+.black-icon:hover {
+  color: #007bff;
+  /* Cambia el color a azul (#007bff) cuando se pasa el ratón sobre el icono */
+}

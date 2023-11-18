@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Ventas</title>
+    <title>SB Admin 2 - Clientes</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -186,13 +186,14 @@
         </li>
 
         <!-- VENTAS -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="Ventas.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-fw fa-store"></i>
             <span>Ventas</span></a
           >
         </li>
+
         <!-- COMPRAS -->
         <li class="nav-item">
           <a class="nav-link" href="Compras.html">
@@ -212,7 +213,7 @@
         </li>
 
         <!-- Clientes -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="Clientes.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-fw fa-user"></i>
@@ -528,19 +529,21 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Modal para crear una Venta -->
+          <!-- Modal para crear un Cliente -->
           <div
             class="modal fade"
-            id="ModalCrearVenta"
+            id="ModalCrearCliente"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="ModalAñadirVenta"
+            aria-labelledby="ModalAñadirCliente"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="ModalAñadirVenta">Crear Venta</h5>
+                  <h5 class="modal-title" id="ModalAñadirCliente">
+                    Crear Cliente
+                  </h5>
                   <button
                     type="button"
                     class="close"
@@ -551,8 +554,8 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <!-- Contenido del formulario para crear venta -->
-                  <form id="crearVentaForm">
+                  <!-- Contenido del formulario para crear cliente -->
+                  <form>
                     <div class="form-group">
                       <label for="nombreCliente">Nombre del Cliente:</label>
                       <input
@@ -563,20 +566,36 @@
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaVenta">Fecha de la Venta:</label>
-                      <input type="date" class="form-control" id="fechaVenta" />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta">Monto de la Venta:</label>
+                      <label for="direccionCliente"
+                        >Dirección del Cliente:</label
+                      >
                       <input
-                        type="number"
+                        type="text"
                         class="form-control"
-                        id="montoVenta"
-                        placeholder="Ingrese el monto de la venta"
-                        max="50000"
+                        id="direccionCliente"
+                        placeholder="Ingrese la dirección del cliente"
                       />
                     </div>
-                    <!-- Agrega más campos según tus necesidades -->
+                    <div class="form-group">
+                      <label for="telefonoCliente">Teléfono del Cliente:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="telefonoCliente"
+                        placeholder="Ingrese el teléfono del cliente"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="documentoCliente"
+                        >Documento del Cliente:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="documentoCliente"
+                        placeholder="Ingrese el documento del cliente"
+                      />
+                    </div>
                     <div class="modal-footer">
                       <button
                         type="button"
@@ -586,7 +605,7 @@
                         Cerrar
                       </button>
                       <button type="submit" class="btn btn-primary">
-                        Guardar Venta
+                        Guardar Cliente
                       </button>
                     </div>
                   </form>
@@ -595,39 +614,38 @@
             </div>
           </div>
 
-          <!-- Inicio de Ventas -->
+          <!-- Inicio de Clientes -->
           <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-4 text-center text-dark">Ventas</h1>
+              <h1 class="h3 mb-4 text-center text-dark">Clientes</h1>
 
               <div class="text-center p-3">
-                <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
-                <button
-                  type="button"
-                  class="btn btn-primary"
+                <a
+                  href="#"
                   data-toggle="modal"
-                  data-target="#ModalCrearVenta"
+                  data-target="#ModalCrearCliente"
+                  title="Crear Cliente"
                 >
-                  <i class="fas fa-pencil-alt"></i> Crear Venta
-                </button>
+                  <i class="fas fa-user-plus fa-3x black-icon"></i>
+                </a>
               </div>
             </div>
 
-            <!-- Modal de visualización -->
+            <!-- Modal de actualizar datos cliente -->
             <div
               class="modal fade"
-              id="ModalVisualizarVenta"
+              id="actualizarModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="visualizarModalLabel"
+              aria-labelledby="actualizarModalLabel"
               aria-hidden="true"
             >
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="visualizarModalLabel">
-                      Detalles de la Venta
+                    <h5 class="modal-title" id="actualizarModalLabel">
+                      Actualizar Datos
                     </h5>
                     <button
                       type="button"
@@ -638,82 +656,67 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-
-                  <!-- Campos del modal para Visualizar -->
                   <div class="modal-body">
-                    <div class="form-group">
-                      <label for="nombreCliente" style="color: black"
-                        >Nombre del Cliente:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreCliente"
-                        placeholder="Nombre del cliente aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="fechaVenta" style="color: black"
-                        >Fecha de la Venta:</label
-                      >
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="fechaVenta"
-                        placeholder="Fecha de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Cantidad de los productos::</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoVenta"
-                        placeholder="Monto de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Monto de la Venta:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoVenta"
-                        placeholder="Monto de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="detallesVenta" style="color: black"
-                        >Detalles de la Venta:</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="detallesVenta"
-                        style="color: black"
-                        placeholder="Ingresa detalles de la venta aquí..."
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Cerrar
-                    </button>
+                    <!-- Contenido del formulario de actualización -->
+                    <form id="actualizarForm">
+                      <!-- Campo de actualización de nombre -->
+                      <div class="form-group">
+                        <label for="nuevoNombre">Nuevo Nombre:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nuevoNombre"
+                          placeholder="Ingresa nuevo nombre"
+                        />
+                      </div>
+
+                      <!-- Campo de actualización de dirección -->
+                      <div class="form-group">
+                        <label for="nuevaDireccion">Nueva Dirección:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nuevaDireccion"
+                          placeholder="Ingresa nueva dirección"
+                        />
+                      </div>
+
+                      <!-- Campo de actualización de teléfono -->
+                      <div class="form-group">
+                        <label for="nuevoTelefono">Nuevo Teléfono:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nuevoTelefono"
+                          placeholder="Ingresa nuevo telefono"
+                        />
+                      </div>
+
+                      <!-- Otros campos de actualización... -->
+
+                      <!-- Botones para enviar el formulario o cancelar -->
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                          Guardar Cambios
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Tabla Ventas -->
+            <!-- Tabla Clientes -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Ventas</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Clientes</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -726,8 +729,9 @@
                     <thead>
                       <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
+                        <th>Dirección</th>
+                        <th>Telefono</th>
+                        <th>Documento</th>
                         <th>Acciones</th>
                         <th>Estado</th>
                       </tr>
@@ -735,30 +739,28 @@
                     <tfoot>
                       <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
+                        <th>Dirección</th>
+                        <th>Telefono</th>
+                        <th>Documento</th>
                         <th>Acciones</th>
                         <th>Estado</th>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
-                        <td>Alejandro</td>
-                        <td>2011/04/25</td>
-                        <td>30,000</td>
+                        <td>Johan</td>
+                        <td>Calle 98</td>
+                        <td>3015497670</td>
+                        <td>1025645352</td>
                         <td>
-                          <!-- Botón de Visualizar con manejo de modal mediante JavaScript -->
                           <button
                             type="button"
-                            class="btn btn-info"
+                            class="btn btn-warning"
+                            title="Actualizar"
                             data-toggle="modal"
-                            data-target="#ModalVisualizarVenta"
+                            data-target="#actualizarModal"
                           >
-                            <i class="fas fa-eye" title="Ver Detalles"></i>
-                          </button>
-
-                          <button type="button" class="btn btn-success">
-                            <i class="fas fa-print" title="Imprimir"></i>
+                            <i class="fas fa-sync-alt"></i>
                           </button>
                         </td>
                         <td>
@@ -768,9 +770,9 @@
                             aria-label="Acciones"
                           >
                             <button
-                              id="toggleButton"
+                              id="toggleClienteButton"
                               class="btn btn-success mr-1"
-                              onclick="toggleEstado()"
+                              onclick="toggleEstadoCliente()"
                             >
                               Activo
                             </button>
@@ -778,7 +780,7 @@
                               <button
                                 class="btn btn-light dropdown-toggle"
                                 type="button"
-                                id="estadoDropdown"
+                                id="estadoClienteDropdown"
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
@@ -787,25 +789,19 @@
                               </button>
                               <div
                                 class="dropdown-menu"
-                                aria-labelledby="estadoDropdown"
+                                aria-labelledby="estadoClienteDropdown"
                               >
                                 <a
                                   class="dropdown-item"
                                   href="#"
-                                  onclick="cambiarEstado('Activo')"
+                                  onclick="cambiarEstadoCliente('Activo')"
                                   >Activo</a
                                 >
                                 <a
                                   class="dropdown-item"
                                   href="#"
-                                  onclick="cambiarEstado('Pendiente')"
-                                  >Pendiente</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="#"
-                                  onclick="cambiarEstado('Inhabilitado')"
-                                  >Inhabilitado</a
+                                  onclick="cambiarEstadoCliente('Inactivo')"
+                                  >Inactivo</a
                                 >
                               </div>
                             </div>
@@ -814,10 +810,11 @@
                       </tr>
                       <tr>
                         <td>Isabella</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
-                        <td>63</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Calle 34</td>
+                        <td>324567890</td>
+                        <td>109863456</td>
+                        <td>Actualizar</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Mateo</td>
@@ -825,6 +822,7 @@
                         <td>30,000</td>
                         <td>66</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Sophia</td>
@@ -832,6 +830,7 @@
                         <td>50,000</td>
                         <td>22</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Diego</td>
@@ -839,6 +838,7 @@
                         <td>30,000</td>
                         <td>33</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Olivia</td>
@@ -846,6 +846,7 @@
                         <td>30,000</td>
                         <td>61</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Sebastián</td>
@@ -853,6 +854,7 @@
                         <td>40,000</td>
                         <td>59</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Alejandro</td>
@@ -860,6 +862,7 @@
                         <td>40,000</td>
                         <td>55</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Isabella</td>
@@ -867,6 +870,7 @@
                         <td>40,000</td>
                         <td>39</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                       <tr>
                         <td>Kevin</td>
@@ -874,13 +878,7 @@
                         <td>50,000</td>
                         <td>23</td>
                         <td>Activo|Pendiente|Inhabilitado</td>
-                      </tr>
-                      <tr>
-                        <td>Cristian</td>
-                        <td>2021/12/24</td>
-                        <td>50,000</td>
-                        <td>30</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Estado</td>
                       </tr>
                     </tbody>
                   </table>
