@@ -195,7 +195,7 @@
         </li>
 
         <!-- COMPRAS -->
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link" href="Compras.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-solid fa-cart-plus"></i>
@@ -204,7 +204,7 @@
         </li>
 
         <!-- PROVEEDOR -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="Proveedor.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-solid fa-user"></i>
@@ -520,20 +520,20 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Modal para crear una Compra -->
+          <!-- Modal para crear una Proveedor -->
           <div
             class="modal fade"
-            id="ModalCrearCompra"
+            id="ModalCrearProveedor"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="ModalAñadirCompraLabel"
+            aria-labelledby="ModalAñadirProveedorLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="ModalAñadirCompraLabel">
-                    Crear Compra
+                  <h5 class="modal-title" id="ModalAñadirProveedorLabel">
+                    Crear Proveedor
                   </h5>
                   <button
                     type="button"
@@ -545,7 +545,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <!-- Contenido del formulario para crear compra -->
+                  <!-- Contenido del formulario para crear Proveedor -->
                   <form>
                     <div class="form-group">
                       <label for="nombreCliente">Nombre del Proveedor:</label>
@@ -557,19 +557,17 @@
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaCompra">Fecha de la Compra:</label>
-                      <input type="date" class="form-control" id="fechaCompra" />
+                      <label for="fechaProveedor">Cédula del Proveedor:</label>
+                      <input type="number" class="form-control" id="cedulaProveedor"  placeholder="Ingrese la cédula del Proveedor"/>
                     </div>
                     <div class="form-group">
-                      <label for="montoCompra">Monto de la Compra:</label>
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="montoCompra"
-                        placeholder="Ingrese el monto de la compra"
-                        max="50000"
-                      />
-                    </div>
+                        <label for="fechaProveedor">Teléfono del Proveedor:</label>
+                        <input type="number" class="form-control" id="cedulaProveedor"  placeholder="Ingrese el télefono del Proveedor" />
+                      </div>
+                      <div class="form-group">
+                        <label for="fechaProveedor">Dirección del Proveedor:</label>
+                        <input type="text" class="form-control" id="cedulaProveedor"  placeholder="Ingrese la dirección del Proveedor" />
+                      </div>
                     <!-- Agrega más campos según tus necesidades -->
                   </form>
                 </div>
@@ -584,19 +582,19 @@
                   <button
                     type="button"
                     class="btn btn-primary"
-                    onclick="guardarCompra()"
+                    onclick="guardarProveedor()"
                   >
-                    Guardar Compra
+                    Guardar Proveedor
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Inicio de Compras -->
+          <!-- Inicio de Proveedor -->
           <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-4 text-center text-dark">Compras</h1>
+              <h1 class="h3 mb-4 text-center text-dark">Proveedor</h1>
 
               <div class="text-center p-3">
                 <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
@@ -604,9 +602,9 @@
                   type="button"
                   class="btn btn-primary"
                   data-toggle="modal"
-                  data-target="#ModalCrearCompra"
+                  data-target="#ModalCrearProveedor"
                 >
-                  <i class="fas fa-pencil-alt"></i> Crear Compra
+                  <i class="fas fa-pencil-alt"></i> Crear Proveedor
                 </button>
               </div>
             </div>
@@ -614,7 +612,7 @@
             <!-- Modal de visualización -->
             <div
               class="modal fade"
-              id="ModalVisualizarCompra"
+              id="ModalVisualizarProveedor"
               tabindex="-1"
               role="dialog"
               aria-labelledby="visualizarModalLabel"
@@ -624,7 +622,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="visualizarModalLabel">
-                      Detalles de la Compra
+                      Detalles del Proveedor
                     </h5>
                     <button
                       type="button"
@@ -640,37 +638,48 @@
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="nombreProveedor" style="color: black"
-                        >Nombre del Proveedor de la Compra:</label
+                        >Nombre del Proveedor:</label
                       >
                       <input
                         type="text"
                         class="form-control"
-                        id="nombreCompraProveedor"
+                        id="nombreProveedor"
                         placeholder="Nombre del proveedor aquí"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaCompra" style="color: black"
-                        >Fecha de la Compra:</label
+                      <label for="cedulaProveedor" style="color: black"
+                        >Cédula del proveedor:</label
                       >
                       <input
-                        type="date"
+                        type="number"
                         class="form-control"
-                        id="fechaCompra"
-                        placeholder="Fecha de la compra aquí"
+                        id="cedulaProveedor"
+                        placeholder="Cédula del proveedor aquí "
                       />
                     </div>
                     <div class="form-group">
-                      <label for="montoCompra" style="color: black"
-                        >Monto de la Compra:</label
+                      <label for="telefonoProveedor" style="color: black"
+                        >Télefono del proveedor:</label
                       >
                       <input
                         type="text"
                         class="form-control"
-                        id="montoCompra"
-                        placeholder="Monto de la compra aquí"
+                        id="télefonoProveedor"
+                        placeholder="Télefono del proveedor aquí"
                       />
                     </div>
+                    <div class="form-group">
+                        <label for="direccionProveedor" style="color: black"
+                          >Dirección del proveedor:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="télefonoProveedor"
+                          placeholder="Dirección del proveedor aquí"
+                        />
+                      </div>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -685,10 +694,10 @@
               </div>
             </div>
 
-            <!-- Tabla Compras -->
+            <!-- Tabla Proveedor -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Compras</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Proveedor</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -700,32 +709,35 @@
                   >
                     <thead>
                       <tr>
-                        <th>Proveedor</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
+                        <th>Nombre</th>
+                        <th>Cédula</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
+                        <th>Cédula</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
                         <th>Acciones</th>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
                         <td>Alejandro</td>
-                        <td>2011/04/25</td>
-                        <td>30,000</td>
+                        <td>567890123</td>
+                        <td>555-1234</td>
+                        <td>Calle de la Luna 789</td>
                         <td>
                           <!-- Botón de Visualizar con manejo de modal mediante JavaScript -->
                           <button
                             type="button"
                             class="btn btn-info"
                             data-toggle="modal"
-                            data-target="#ModalVisualizarCompra"
+                            data-target="#ModalVisualizarProveedor"
                           >
                             <i class="fas fa-eye" title="Ver Detalles"></i>
                           </button>
@@ -741,62 +753,72 @@
                       </tr>
                       <tr>
                         <td>Isabella</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
+                        <td>890123456</td>
+                        <td>555-5678</td>
+                        <td>Calle de la Luna 783</td>
                         <td>63</td>
                       </tr>
                       <tr>
                         <td>Mateo</td>
-                        <td>2021/11/21</td>
-                        <td>30,000</td>
+                        <td>345678901</td>
+                        <td>555-7890</td>
+                        <td>Calle de la Luna 589</td>
                         <td>66</td>
                       </tr>
                       <tr>
                         <td>Sophia</td>
-                        <td>2022/08/21</td>
-                        <td>50,000</td>
+                        <td>901234567</td>
+                        <td>555-2345</td>
+                        <td>Calle de la Luna 789</td>
                         <td>42</td>
                       </tr>
                       <tr>
                         <td>Diego</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
+                        <td>678901234</td>
+                        <td>555-6789</td>
+                        <td>Calle de la Luna 789</td>
                         <td>33</td>
                       </tr>
                       <tr>
                         <td>Olivia</td>
-                        <td>2021/01/21</td>
-                        <td>20,000</td>
+                        <td>112233445</td>
+                        <td>555-8901</td>
+                        <td>Calle de la Luna 783</td>
                         <td>61</td>
                       </tr>
                       <tr>
                         <td>Sebastián</td>
-                        <td>2021/12/27</td>
-                        <td>30,000</td>
+                        <td>998877665</td>
+                        <td>555-3456</td>
+                        <td>Calle de la Luna 781</td>
                         <td>59</td>
                       </tr>
                       <tr>
                         <td>Samuel</td>
-                        <td>2021/12/24</td>
-                        <td>20,000</td>
+                        <td>445566778</td>
+                        <td>555-4567</td>
+                        <td>Calle de la Luna 786</td>
                         <td>55</td>
                       </tr>
                       <tr>
                         <td>Fernando</td>
-                        <td>2021/12/31</td>
-                        <td>20,000</td>
+                        <td>334455667</td>
+                        <td>555-6780</td>
+                        <td>Calle de la Luna 784</td>
                         <td>39</td>
                       </tr>
                       <tr>
                         <td>Kevin</td>
-                        <td>2021/12/30</td>
-                        <td>20,000</td>
+                        <td>556677889</td>
+                        <td>555-9012</td>
+                        <td>Carrera de las Flores 456</td>
                         <td>23</td>
                       </tr>
                       <tr>
                         <td>Cristian</td>
-                        <td>2021/12/24</td>
-                        <td>20,000</td>
+                        <td>765432109</td>
+                        <td>555-9012</td>
+                        <td>Calle del Sol 123</td>
                         <td>30</td>
                       </tr>
                     </tbody>
