@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Ventas</title>
+    <title>SB Admin 2 - Compras</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -186,7 +186,7 @@
         </li>
 
         <!-- VENTAS -->
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link" href="Ventas.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-fw fa-store"></i>
@@ -195,8 +195,8 @@
         </li>
 
         <!-- COMPRAS -->
-        <li class="nav-item ">
-          <a class="nav-link" href="Compras.html">
+        <li class="nav-item active">
+          <a class="nav-link" href="Ventas.html">
             <!-- <i class='bx bx-store-alt'></i> -->
             <i class="fas fa-solid fa-cart-plus"></i>
             <span>Compras</span></a
@@ -514,17 +514,17 @@
           <!-- Modal para crear una Venta -->
           <div
             class="modal fade"
-            id="ModalCrearVenta"
+            id="ModalCrearCompra"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="ModalAñadirCamisetaLabel"
+            aria-labelledby="ModalAñadirCompraLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="ModalAñadirCamisetaLabel">
-                    Crear Venta
+                  <h5 class="modal-title" id="ModalAñadirCompraLabel">
+                    Crear Compra
                   </h5>
                   <button
                     type="button"
@@ -539,25 +539,25 @@
                   <!-- Contenido del formulario para crear venta -->
                   <form>
                     <div class="form-group">
-                      <label for="nombreCliente">Nombre del Cliente:</label>
+                      <label for="nombreCliente">Nombre del Proveedor:</label>
                       <input
                         type="text"
                         class="form-control"
                         id="nombreCliente"
-                        placeholder="Ingrese el nombre del cliente"
+                        placeholder="Ingrese el nombre del Proveedor"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaVenta">Fecha de la Venta:</label>
+                      <label for="fechaVenta">Fecha de la Compra:</label>
                       <input type="date" class="form-control" id="fechaVenta" />
                     </div>
                     <div class="form-group">
-                      <label for="montoVenta">Monto de la Venta:</label>
+                      <label for="montoVenta">Monto de la Compra:</label>
                       <input
                         type="number"
                         class="form-control"
                         id="montoVenta"
-                        placeholder="Ingrese el monto de la venta"
+                        placeholder="Ingrese el monto de la compra"
                         max="50000"
                       />
                     </div>
@@ -577,7 +577,7 @@
                     class="btn btn-primary"
                     onclick="guardarVenta()"
                   >
-                    Guardar Venta
+                    Guardar Compra
                   </button>
                 </div>
               </div>
@@ -587,7 +587,7 @@
           <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-4 text-center text-dark">Ventas</h1>
+              <h1 class="h3 mb-4 text-center text-dark">Compras</h1>
 
               <div class="text-center p-3">
                 <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
@@ -595,7 +595,7 @@
                   type="button"
                   class="btn btn-primary"
                   data-toggle="modal"
-                  data-target="#ModalCrearVenta"
+                  data-target="#ModalCrearCompra"
                 >
                   <i class="fas fa-pencil-alt"></i> Crear Venta
                 </button>
@@ -615,7 +615,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="visualizarModalLabel">
-                      Detalles de la Venta
+                      Detalles de la Compra
                     </h5>
                     <button
                       type="button"
@@ -630,8 +630,8 @@
                   <!-- Campos del modal para Visualizar -->
                   <div class="modal-body">
                     <div class="form-group">
-                      <label for="nombreCliente" style="color: black"
-                        >Nombre del Cliente:</label
+                      <label for="nombreProveedor" style="color: black"
+                        >Nombre del Proveedor:</label
                       >
                       <input
                         type="text"
@@ -641,48 +641,26 @@
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaVenta" style="color: black"
-                        >Fecha de la Venta:</label
+                      <label for="fechaCompra" style="color: black"
+                        >Fecha de la Compra:</label
                       >
                       <input
                         type="date"
                         class="form-control"
                         id="fechaVenta"
-                        placeholder="Fecha de la venta aquí"
+                        placeholder="Fecha de la compra aquí"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Cantidad de los productos::</label
+                      <label for="montoCompra" style="color: black"
+                        >Monto de la Compra:</label
                       >
                       <input
                         type="text"
                         class="form-control"
                         id="montoVenta"
-                        placeholder="Monto de la venta aquí"
+                        placeholder="Monto de la compra aquí"
                       />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Monto de la Venta:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoVenta"
-                        placeholder="Monto de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="detallesVenta" style="color: black"
-                        >Detalles de la Venta:</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="detallesVenta"
-                        style="color: black"
-                        placeholder="Ingresa detalles de la venta aquí..."
-                      ></textarea>
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -701,7 +679,7 @@
             <!-- Tabla Ventas -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Ventas</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Compras</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -713,11 +691,10 @@
                   >
                     <thead>
                       <tr>
-                        <th>Nombre</th>
+                        <th>Proveedor</th>
                         <th>Fecha</th>
                         <th>Total</th>
                         <th>Acciones</th>
-                        <th>Estado</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -726,7 +703,6 @@
                         <th>Fecha</th>
                         <th>Total</th>
                         <th>Acciones</th>
-                        <th>Estado</th>
                       </tr>
                     </tfoot>
                     <tbody>
@@ -740,7 +716,7 @@
                             type="button"
                             class="btn btn-info"
                             data-toggle="modal"
-                            data-target="#ModalVisualizarVenta"
+                            data-target="#ModalVisualizar Venta"
                           >
                             <i class="fas fa-eye" title="Ver Detalles"></i>
                           </button>
@@ -753,126 +729,66 @@
                             <i class="fas fa-print" title="Imprimir"></i>
                           </button>
                         </td>
-                        <td>
-                          <div
-                            class="btn-group"
-                            role="group"
-                            aria-label="Acciones"
-                          >
-                            <button
-                              id="toggleButton"
-                              class="btn btn-success mr-1"
-                              onclick="toggleEstado()"
-                            >
-                              Activo
-                            </button>
-                            <div class="dropdown">
-                              <button
-                                class="btn btn-Light dropdown-toggle"
-                                type="button"
-                                id="estadoDropdown"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <span class="caret"></span>
-                              </button>
-                              <div
-                                class="dropdown-menu"
-                                aria-labelledby="estadoDropdown"
-                              >
-                                <a
-                                  class="dropdown-item"
-                                  href="#"
-                                  onclick="cambiarEstado('Activo')"
-                                  >Activo</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="#"
-                                  onclick="cambiarEstado('Pendiente')"
-                                  >Pendiente</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="#"
-                                  onclick="cambiarEstado('Inhabilitado')"
-                                  >Inhabilitado</a
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </td>
                       </tr>
                       <tr>
                         <td>Isabella</td>
                         <td>2021/08/25</td>
                         <td>30,000</td>
                         <td>63</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Mateo</td>
                         <td>2021/11/21</td>
                         <td>30,000</td>
                         <td>66</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Sophia</td>
                         <td>2022/08/21</td>
                         <td>50,000</td>
-                        <td>22</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>42</td>
                       </tr>
                       <tr>
                         <td>Diego</td>
                         <td>2021/08/25</td>
                         <td>30,000</td>
                         <td>33</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Olivia</td>
                         <td>2021/01/21</td>
-                        <td>30,000</td>
+                        <td>20,000</td>
                         <td>61</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Sebastián</td>
                         <td>2021/12/27</td>
-                        <td>40,000</td>
+                        <td>30,000</td>
                         <td>59</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
-                        <td>Alejandro</td>
+                        <td>Samuel</td>
                         <td>2021/12/24</td>
-                        <td>40,000</td>
+                        <td>20,000</td>
                         <td>55</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
-                        <td>Isabella</td>
+                        <td>Fernando</td>
                         <td>2021/12/31</td>
-                        <td>40,000</td>
+                        <td>20,000</td>
                         <td>39</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Kevin</td>
                         <td>2021/12/30</td>
-                        <td>50,000</td>
+                        <td>20,000</td>
                         <td>23</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                       <tr>
                         <td>Cristian</td>
                         <td>2021/12/24</td>
-                        <td>50,000</td>
+                        <td>20,000</td>
                         <td>30</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
                       </tr>
                     </tbody>
                   </table>
