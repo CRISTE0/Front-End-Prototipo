@@ -30,7 +30,7 @@
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  padding: 0.625rem 1.25rem;
+  padding: 2px 12px;
 }
 
 .inputfile+label svg {
@@ -79,8 +79,20 @@
   height: 100%;
   fill: #fff;
 }
-
 /* Boton File Crear Camiseta */
+
+/* Boton File Editar Camiseta */
+.inputfile-1 + label {
+  color: #fff;
+  background-color: #dbdbdb;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+  background-color: #9e9e9e;
+}
+/* Boton File Editar Camiseta */
 
 
 
