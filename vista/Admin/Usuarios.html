@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Admin - Ventas</title>
+    <title>SB Admin 2 - Usuarios</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -54,8 +54,11 @@
           <div class="sidebar-brand-text mx-3">SoftShirt</div>
         </a>
 
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a
@@ -65,21 +68,122 @@
         <!-- Divider -->
         <hr class="sidebar-divider" />
 
-        
+        <!-- Heading -->
+        <div class="sidebar-heading">Interface</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
+          </a>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Custom Components:</h6>
+              <a class="collapse-item" href="buttons.html">Buttons</a>
+              <a class="collapse-item" href="cards.html">Cards</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseUtilities"
+            aria-expanded="true"
+            aria-controls="collapseUtilities"
+          >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Utilities</span>
+          </a>
+          <div
+            id="collapseUtilities"
+            class="collapse"
+            aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Custom Utilities:</h6>
+              <a class="collapse-item" href="utilities-color.html">Colors</a>
+              <a class="collapse-item" href="utilities-border.html">Borders</a>
+              <a class="collapse-item" href="utilities-animation.html"
+                >Animations</a
+              >
+              <a class="collapse-item" href="utilities-other.html">Other</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <div class="sidebar-heading">Páginas</div>
+        <div class="sidebar-heading">Addons</div>
 
-        
-
-
-        <!-- PRODUCTOS -->
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link" href="Productos.html">
-              <!-- <i class='bx bx-store-alt'></i> -->
-              <i class="fas fa-fw fa-tshirt"></i>
-              <span>Productos</span></a>
-      </li>
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapsePages"
+            aria-expanded="true"
+            aria-controls="collapsePages"
+          >
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+          </a>
+          <div
+            id="collapsePages"
+            class="collapse"
+            aria-labelledby="headingPages"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Login Screens:</h6>
+              <a class="collapse-item" href="login.html">Login</a>
+              <a class="collapse-item" href="register.html">Register</a>
+              <a class="collapse-item" href="forgot-password.html"
+                >Forgot Password</a
+              >
+              <div class="collapse-divider"></div>
+              <h6 class="collapse-header">Other Pages:</h6>
+              <a class="collapse-item" href="404.html">404 Page</a>
+              <a class="collapse-item" href="blank.html">Blank Page</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a
+          >
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a
+          >
+        </li>
 
         <!-- VENTAS -->
         <li class="nav-item">
@@ -89,17 +193,6 @@
             <span>Ventas</span></a
           >
         </li>
-
-
-        <!-- DISEÑOS -->
-        <li class="nav-item">
-          <a class="nav-link" href="Disenios.html">
-            <!-- <i class='bx bx-store-alt'></i> -->
-            <i class="fas fa-fw fa-paint-brush"></i>
-            <span>Diseños</span></a
-          >
-        </li>
-
         <!-- COMPRAS -->
         <li class="nav-item">
           <a class="nav-link" href="Compras.html">
@@ -128,12 +221,13 @@
         </li>
 
         <!-- Usuarios -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="Usuarios.html">
-              <!-- <i class='bx bx-store-alt'></i> -->
-              <i class="fas fa-fw fa-user"></i>
-              <span>Usuarios</span></a>
-      </li>
+            <!-- <i class='bx bx-store-alt'></i> -->
+            <i class="fas fa-fw fa-user"></i>
+            <span>Usuarios</span></a
+          >
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
@@ -443,176 +537,67 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Modal para crear una Venta -->
+          <!-- Modal para crear usuario -->
           <div
             class="modal fade"
-            id="ModalCrearVenta"
+            id="crearUsuarioModal"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="ModalAñadirVenta"
+            aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="ModalAñadirVenta">Crear Venta</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Crear Usuario
+                  </h5>
                   <button
                     type="button"
                     class="close"
                     data-dismiss="modal"
-                    aria-label="Close"
+                    aria-label="Cerrar"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <!-- Contenido del formulario para crear venta -->
-                  <form id="crearVentaForm">
+                  <!-- Formulario para crear usuario -->
+                  <form id="crearUsuarioForm">
                     <div class="form-group">
-                      <label for="nombreCliente">Nombre del Cliente:</label>
+                      <label for="nombre">Nombre:</label>
                       <input
                         type="text"
                         class="form-control"
-                        id="nombreCliente"
-                        placeholder="Ingrese el nombre del cliente"
+                        id="nombre"
+                        placeholder="Ingresa el nombre"
+                        required
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaVenta">Fecha de la Venta:</label>
-                      <input type="date" class="form-control" id="fechaVenta" />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta">Monto de la Venta:</label>
+                      <label for="correo">Correo:</label>
                       <input
-                        type="number"
+                        type="email"
                         class="form-control"
-                        id="montoVenta"
-                        placeholder="Ingrese el monto de la venta"
-                        max="50000"
+                        id="correo"
+                        placeholder="Ingresa el correo"
+                        required
                       />
                     </div>
-                    <!-- Agrega más campos según tus necesidades -->
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Cerrar
-                      </button>
-                      <button type="submit" class="btn btn-primary">
-                        Guardar Venta
-                      </button>
+                    <div class="form-group">
+                      <label for="contrasena">Contraseña:</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="contrasena"
+                        placeholder="Ingresa la contraseña"
+                        required
+                      />
                     </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Inicio de Ventas -->
-          <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="d-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-4 text-center text-dark">Ventas</h1>
-
-              <div class="text-center p-3">
-                <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#ModalCrearVenta"
-                >
-                  <i class="fas fa-pencil-alt"></i> Crear Venta
-                </button>
-              </div>
-            </div>
-
-            <!-- Modal de visualización -->
-            <div
-              class="modal fade"
-              id="ModalVisualizarVenta"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="visualizarModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="visualizarModalLabel">
-                      Detalles de la Venta
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
+                    <!-- Botones dentro del formulario -->
+                    <button type="submit" class="btn btn-primary">
+                      Enviar
                     </button>
-                  </div>
-
-                  <!-- Campos del modal para Visualizar -->
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <label for="nombreCliente" style="color: black"
-                        >Nombre del Cliente:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreCliente"
-                        placeholder="Nombre del cliente aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="fechaVenta" style="color: black"
-                        >Fecha de la Venta:</label
-                      >
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="fechaVenta"
-                        placeholder="Fecha de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Cantidad de los productos::</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoVenta"
-                        placeholder="Monto de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoVenta" style="color: black"
-                        >Monto de la Venta:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoVenta"
-                        placeholder="Monto de la venta aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="detallesVenta" style="color: black"
-                        >Detalles de la Venta:</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="detallesVenta"
-                        style="color: black"
-                        placeholder="Ingresa detalles de la venta aquí..."
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-secondary"
@@ -620,15 +605,35 @@
                     >
                       Cerrar
                     </button>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Tabla Ventas -->
+          <!-- Inicio de Usuarios -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="d-flex align-items-center justify-content-between">
+              <h1 class="h3 mb-4 text-center text-dark">Usuarios</h1>
+
+              <div class="text-center p-3">
+                <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#crearUsuarioModal"
+                >
+                  <i class="fas fa-pencil-alt"></i> Crear Usuario
+                </button>
+              </div>
+            </div>
+
+            <!-- Tabla Usuarios -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Ventas</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -641,41 +646,24 @@
                     <thead>
                       <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
                         <th>Estado</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
                         <th>Estado</th>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
                         <td>Alejandro</td>
-                        <td>2011/04/25</td>
-                        <td>30,000</td>
-                        <td>
-                          <!-- Botón de Visualizar con manejo de modal mediante JavaScript -->
-                          <button
-                            type="button"
-                            class="btn btn-info"
-                            data-toggle="modal"
-                            data-target="#ModalVisualizarVenta"
-                          >
-                            <i class="fas fa-eye" title="Ver Detalles"></i>
-                          </button>
-
-                          <button type="button" class="btn btn-success">
-                            <i class="fas fa-print" title="Imprimir"></i>
-                          </button>
-                        </td>
+                        <td>lejo45@gmail.com</td>
+                        <td>4545456</td>
                         <td>
                           <div
                             class="btn-group"
@@ -683,9 +671,9 @@
                             aria-label="Acciones"
                           >
                             <button
-                              id="toggleButton"
+                              id="toggleClienteButton"
                               class="btn btn-success mr-1"
-                              onclick="toggleEstado()"
+                              onclick="toggleEstadoCliente()"
                             >
                               Activo
                             </button>
@@ -693,7 +681,7 @@
                               <button
                                 class="btn btn-light dropdown-toggle"
                                 type="button"
-                                id="estadoDropdown"
+                                id="estadoClienteDropdown"
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
@@ -702,25 +690,19 @@
                               </button>
                               <div
                                 class="dropdown-menu"
-                                aria-labelledby="estadoDropdown"
+                                aria-labelledby="estadoClienteDropdown"
                               >
                                 <a
                                   class="dropdown-item"
                                   href="#"
-                                  onclick="cambiarEstado('Activo')"
+                                  onclick="cambiarEstadoCliente('Activo')"
                                   >Activo</a
                                 >
                                 <a
                                   class="dropdown-item"
                                   href="#"
-                                  onclick="cambiarEstado('Pendiente')"
-                                  >Pendiente</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="#"
-                                  onclick="cambiarEstado('Inhabilitado')"
-                                  >Inhabilitado</a
+                                  onclick="cambiarEstadoCliente('Inactivo')"
+                                  >Inactivo</a
                                 >
                               </div>
                             </div>
@@ -729,73 +711,63 @@
                       </tr>
                       <tr>
                         <td>Isabella</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
-                        <td>63</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>isa69@gmail.com</td>
+                        <td>6446446</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Mateo</td>
-                        <td>2021/11/21</td>
-                        <td>30,000</td>
-                        <td>66</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Matrox84@gmail.com</td>
+                        <td>6464553</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Sophia</td>
-                        <td>2022/08/21</td>
-                        <td>50,000</td>
-                        <td>22</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Sophia888@gmail.com</td>
+                        <td>558461</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Diego</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
-                        <td>33</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>diego454@gmail.com</td>
+                        <td>55468</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Olivia</td>
-                        <td>2021/01/21</td>
-                        <td>30,000</td>
-                        <td>61</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Olivia44@gmail.com</td>
+                        <td>84745</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Sebastián</td>
-                        <td>2021/12/27</td>
-                        <td>40,000</td>
-                        <td>59</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Sebas45@gmail.com</td>
+                        <td>15664</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Alejandro</td>
-                        <td>2021/12/24</td>
-                        <td>40,000</td>
-                        <td>55</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Ale02@gmail.com</td>
+                        <td>94856</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Isabella</td>
-                        <td>2021/12/31</td>
-                        <td>40,000</td>
-                        <td>39</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Isa22@gmail.com</td>
+                        <td>56613</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Kevin</td>
-                        <td>2021/12/30</td>
-                        <td>50,000</td>
-                        <td>23</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Viño99@gmail.com</td>
+                        <td>13256</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                       <tr>
                         <td>Cristian</td>
-                        <td>2021/12/24</td>
-                        <td>50,000</td>
-                        <td>30</td>
-                        <td>Activo|Pendiente|Inhabilitado</td>
+                        <td>Ronaldo7@gmail.com</td>
+                        <td>45548</td>
+                        <td>Activo|Inactivo</td>
                       </tr>
                     </tbody>
                   </table>
