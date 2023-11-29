@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Admin - Compras</title>
+    <title>Admin - Diseños</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -53,6 +53,9 @@
           </div>
           <div class="sidebar-brand-text mx-3">SoftShirt</div>
         </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
@@ -435,21 +438,19 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Modal para crear una Compra -->
+          <!-- Modal para crear una Venta -->
           <div
             class="modal fade"
-            id="ModalCrearCompra"
+            id="ModalCrearVenta"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="ModalAñadirCompraLabel"
+            aria-labelledby="ModalAñadirVenta"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="ModalAñadirCompraLabel">
-                    Crear Compra
-                  </h5>
+                  <h5 class="modal-title" id="ModalAñadirVenta">Crear Venta</h5>
                   <button
                     type="button"
                     class="close"
@@ -460,270 +461,71 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <!-- Contenido del formulario para crear compra -->
-                  <form>
+                  <!-- Contenido del formulario para crear venta -->
+                  <form id="crearVentaForm">
                     <div class="form-group">
-                      <label for="nombreCliente">Nombre del Proveedor:</label>
+                      <label for="nombreCliente">Nombre del Cliente:</label>
                       <input
                         type="text"
                         class="form-control"
                         id="nombreCliente"
-                        placeholder="Ingrese el nombre del Proveedor"
+                        placeholder="Ingrese el nombre del cliente"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="fechaCompra">Fecha de la Compra:</label>
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="fechaCompra"
-                      />
+                      <label for="fechaVenta">Fecha de la Venta:</label>
+                      <input type="date" class="form-control" id="fechaVenta" />
                     </div>
                     <div class="form-group">
-                      <label for="montoCompra">Monto de la Compra:</label>
+                      <label for="montoVenta">Monto de la Venta:</label>
                       <input
                         type="number"
                         class="form-control"
-                        id="montoCompra"
-                        placeholder="Ingrese el monto de la compra"
+                        id="montoVenta"
+                        placeholder="Ingrese el monto de la venta"
                         max="50000"
                       />
                     </div>
                     <!-- Agrega más campos según tus necesidades -->
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Guardar Venta
+                      </button>
+                    </div>
                   </form>
                 </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    onclick="guardarCompra()"
-                  >
-                    Guardar Compra
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-          <!-- Inicio de Compras -->
+
           <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="d-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-4 text-center text-dark">Compras</h1>
+            <h3 class="text-dark">Diseños de @username</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4 product-wap rounded-0">
+                        <div class="card rounded-0">
+                            <img class="card-img rounded-0 img-fluid" src="../assets/img/diseño.png">
+                        </div>
+                        <p class="text-dark">Diseño #1</p>
 
-              <div class="text-center p-3">
-                <i class="fas fa-plus-circle fa-3x d-block p-3"></i>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#ModalCrearCompra"
-                >
-                  <i class="fas fa-pencil-alt"></i> Crear Compra
-                </button>
-              </div>
-            </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <button type="button" class=""><i class='fas fa-trash' ></i></button>
 
-            <!-- Modal de visualización -->
-            <div
-              class="modal fade"
-              id="ModalVisualizarCompra"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="visualizarModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="visualizarModalLabel">
-                      Detalles de la Compra
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-
-                  <!-- Campos del modal para Visualizar -->
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <label for="nombreProveedor" style="color: black"
-                        >Nombre del Proveedor de la Compra:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreCompraProveedor"
-                        placeholder="Nombre del proveedor aquí"
-                      />
+                            <button type="button" class=""><i class="fas fa-shopping-cart"></i></button>
+                            
+                        </div>
                     </div>
-                    <div class="form-group">
-                      <label for="fechaCompra" style="color: black"
-                        >Fecha de la Compra:</label
-                      >
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="fechaCompra"
-                        placeholder="Fecha de la compra aquí"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="montoCompra" style="color: black"
-                        >Monto de la Compra:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="montoCompra"
-                        placeholder="Monto de la compra aquí"
-                      />
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Cerrar
-                    </button>
-                  </div>
                 </div>
-              </div>
             </div>
+        </div>
 
-            <!-- Tabla Compras -->
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Compras</h6>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table
-                    class="table table-bordered"
-                    id="dataTable"
-                    width="100%"
-                    cellspacing="0"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Proveedor</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                      <tr>
-                        <td>Alejandro</td>
-                        <td>2011/04/25</td>
-                        <td>30,000</td>
-                        <td>
-                          <!-- Botón de Visualizar con manejo de modal mediante JavaScript -->
-                          <button
-                            type="button"
-                            class="btn btn-info"
-                            data-toggle="modal"
-                            data-target="#ModalVisualizarCompra"
-                          >
-                            <i class="fas fa-eye" title="Ver Detalles"></i>
-                          </button>
-
-                          <button
-                            type="button"
-                            class="btn btn-success"
-                            onclick="imprimirDocumento()"
-                          >
-                            <i class="fas fa-print" title="Imprimir"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Isabella</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
-                        <td>63</td>
-                      </tr>
-                      <tr>
-                        <td>Mateo</td>
-                        <td>2021/11/21</td>
-                        <td>30,000</td>
-                        <td>66</td>
-                      </tr>
-                      <tr>
-                        <td>Sophia</td>
-                        <td>2022/08/21</td>
-                        <td>50,000</td>
-                        <td>42</td>
-                      </tr>
-                      <tr>
-                        <td>Diego</td>
-                        <td>2021/08/25</td>
-                        <td>30,000</td>
-                        <td>33</td>
-                      </tr>
-                      <tr>
-                        <td>Olivia</td>
-                        <td>2021/01/21</td>
-                        <td>20,000</td>
-                        <td>61</td>
-                      </tr>
-                      <tr>
-                        <td>Sebastián</td>
-                        <td>2021/12/27</td>
-                        <td>30,000</td>
-                        <td>59</td>
-                      </tr>
-                      <tr>
-                        <td>Samuel</td>
-                        <td>2021/12/24</td>
-                        <td>20,000</td>
-                        <td>55</td>
-                      </tr>
-                      <tr>
-                        <td>Fernando</td>
-                        <td>2021/12/31</td>
-                        <td>20,000</td>
-                        <td>39</td>
-                      </tr>
-                      <tr>
-                        <td>Kevin</td>
-                        <td>2021/12/30</td>
-                        <td>20,000</td>
-                        <td>23</td>
-                      </tr>
-                      <tr>
-                        <td>Cristian</td>
-                        <td>2021/12/24</td>
-                        <td>20,000</td>
-                        <td>30</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
@@ -803,6 +605,6 @@
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
 
-    <script src="../assets/js/style.js"></script>
+    <script src="../assets/js/estados.js"></script>
   </body>
 </html>
