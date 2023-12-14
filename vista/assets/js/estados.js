@@ -10,11 +10,11 @@ function cambiarEstado(estado) {
 // Función para obtener la clase de color correspondiente al estado
 function getColorClass(estado) {
   switch (estado) {
-    case "Activo":
+    case "Finalizado":
       return "btn-success";
     case "Pendiente":
       return "btn-warning";
-    case "Inhabilitado":
+    case "Anulado":
       return "btn-danger";
     default:
       return "btn-secondary"; // Puedes establecer un color predeterminado si es necesario
@@ -32,7 +32,7 @@ function cambiarEstadoCliente(estado) {
 
 function getColorClassCliente(estado) {
   switch (estado) {
-    case "Activo":
+    case "Finalizado":
       return "btn-success";
     case "Inactivo":
       return "btn-danger";
