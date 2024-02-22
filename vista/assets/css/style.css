@@ -195,3 +195,11 @@
   color: #007bff;
   /* Cambia el color a azul (#007bff) cuando se pasa el ratón sobre el icono */
 }
+
+h5 {
+  color: black;
+}
+
+label {
+  color: black;
+}
