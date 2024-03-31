@@ -1,7 +1,7 @@
 //Buenooo
 
 window.onload = function () {
-  let camisaB = "../assets/img/camiseta_blanca.png";
+  let camisaDefault = "../assets/img/camiseta_blanca.png";
   let camisaN = "../templatemo_559_zay_shop/assets/img/camiseta_negra.png";
 
   const canvas = document.getElementById("canvas");
@@ -9,6 +9,37 @@ window.onload = function () {
   const bufferCanvas = document.createElement("canvas"); // Lienzo de búfer
   const bufferContext = bufferCanvas.getContext("2d");
   let elements = [];
+  const shirtSelect = document.getElementById("shirtSelect");
+  let targetG = null;
+
+  
+  let sizeImage = document.getElementById('input-number');
+  sizeImage.style.display="none";
+
+  
+  sizeImage.addEventListener("change",function () {
+      
+    let imageIndex = elements.findIndex(element => element.type === "image")
+    
+    if (imageIndex !== -1) {
+        elements.splice(imageIndex,1);
+        loadImage(targetG);
+        drawElements();
+      }   
+    console.log(sizeImage.value);
+  });
+
+  
+
+
+  // Add an event listener to the select element
+  shirtSelect.addEventListener("change", function () {
+    // Set the new shirt image source
+    camisaDefault = shirtSelect.value;
+
+    // Call the drawElementsVisible function to redraw the canvas with the new shirt image
+    drawElementsVisible();
+  });
 
   // Función para dibujar los elementos en el lienzo visible sin los iconos
   const drawElementsVisible = function () {
@@ -33,7 +64,7 @@ window.onload = function () {
         }
       });
     };
-    shirtImage.src = camisaB;
+    shirtImage.src = camisaDefault;
   };
 
   const drawElements = function () {
@@ -65,7 +96,7 @@ window.onload = function () {
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(bufferCanvas, 0, 0);
     };
-    shirtImage.src = camisaB;
+    shirtImage.src = camisaDefault;
   };
 
   // Restablecer el tamaño del lienzo de búfer al cambiar el tamaño del lienzo visible
@@ -78,27 +109,37 @@ window.onload = function () {
   window.addEventListener("resize", resizeBufferCanvas);
 
   const loadImage = function (event) {
+    const target = event.target || targetG;
+    targetG = target;
+    console.log(target);
+    console.log(targetG);
     const img = new Image();
+    console.log(img);
+    img.src = URL.createObjectURL(target.files[0]);
     img.onload = function () {
       const element = {
         type: "image",
         img: img,
         x: 0,
         y: 0,
-        width: 250,
-        height: 250,
+        width: sizeImage.value,
+        height: sizeImage.value,
       };
+      console.log(element);
       elements.push(element);
       drawElements();
     };
-    img.src = URL.createObjectURL(event.target.files[0]);
+    
+    sizeImage.style.display="block";
+    
+    console.log(img);
   };
 
   const fileInput = document.getElementById("file-input");
   fileInput.addEventListener("change", loadImage);
 
   const addText = function () {
-    const text = document.getElementById("text-input").value;
+    const text = document.getElementById("text-input").value || "siuu";
     const x = 222;
     const y = 80;
     const font = document.getElementById("text-font").value;
@@ -121,6 +162,7 @@ window.onload = function () {
 
   const clearCanvas = function () {
     elements = [];
+    sizeImage.style.display="none";
     drawElements();
   };
 
@@ -139,6 +181,7 @@ window.onload = function () {
     }
     x -= canvas.offsetLeft;
     y -= canvas.offsetTop;
+    console.log(x,y);
     return { x: x, y: y };
   };
 
@@ -250,6 +293,7 @@ window.onload = function () {
   }
 
   // Llamar a la función inicial de dibujado en el lienzo visible
+  drawElements();
   drawElementsVisible();
   resizeBufferCanvas(); // Inicializar el tamaño del búfer
 };

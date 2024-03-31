@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/templatemo.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
-    <script src="../assets/js/diseñador.js"></script>
+    <script defer src="../assets/js/diseñador.js"></script>
 
 
     <!-- Load fonts style after rendering the layout styles -->
@@ -154,7 +154,20 @@
                 </button>
 
                 <button id="clear-button" class="bg-danger">Limpiar Canvas</button>
+                <div class=" p-5">
+                    <select id="shirtSelect">
+                        <option value="">Elige el color de la camiseta</option>
+                        <option value="../assets/img/camiseta_blanca.png">Camiseta blanca</option>
+                        <option value="../assets/img/camiseta_negra.png">Camiseta negra</option>
+                        <option value="camisa3.jpg">Camiseta 3</option>
+                    </select>               
+                </div>
+                <input type="number" id="input-number" value="250" min="80" max="250">
             </div>
+
+
+
+
         </div>
     </div>
     </div>
